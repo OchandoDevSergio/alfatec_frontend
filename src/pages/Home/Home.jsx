@@ -1,77 +1,63 @@
-import "./Portfolio.css";
-import { useSelector } from "react-redux";
-import { userDataCheck } from "../userSlice";
-import { searchPortfolio } from "../../services/apiCalls";
-import { PortfolioCard } from "../../common/PortfolioCard/PortfolioCard";
+import "./Home.css";
+import { searchUsuarios } from "../../services/apiCalls";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserCard } from "../../common/UserCard/UserCard";
 
-export const Portfolio = () => {
-  //Instanciamos REDUX en modo lectura para los users
-  const reduxUserData = useSelector(userDataCheck);
-  const [designs, setDesigns] = useState([]);
-  const [artist, setArtist] = useState([]);
+export const Home = () => {
+  const [usuarios, setUsuarios] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (reduxUserData.credentials?.userData?.roleId !== 3) {
-      navigate("/");
-    }
-  }, []);
 
   useEffect(() => {
-    searchPortfolio(
-      reduxUserData.credentials.userData.userId,
-      reduxUserData.credentials
-    )
+    searchUsuarios()
       .then((results) => {
-        setArtist(results.data.data[0]);
-        setDesigns(results.data.data[0].Designs);
+        setUsuarios();
       })
       .catch((error) => console.log(error));
   }, []);
-
-  const updateMe = () => {
-    searchPortfolio(
-      reduxUserData.credentials.userData.userId,
-      reduxUserData.credentials
-    )
-      .then((results) => {
-        setArtist(results.data.data[0]);
-        setDesigns(results.data.data[0].Designs);
-      })
-      .catch((error) => console.log(error));
-    useEffect(() => {
-      if (reduxUserData.credentials?.userData?.roleId !== 3) {
-        navigate("/");
-      }
-    }, []);
-  };
 
   return (
     <>
-      <div className="subHeader">
-        <div className="portfolioName">
-          {reduxUserData.credentials.userData.userName.toUpperCase()} PORTFOLIO
-        </div>
-        <div className="subheaderButton" onClick={() => navigate("/designadd")}>
-          ADD TATTOO DESIGN
-        </div>
-      </div>
-      {designs.length > 0 ? (
+      {usuarios.length > 0 ? (
         <div className="infinite-scroll-container">
           <div className="row spaceRow"></div>
 
-          {designs.map((design) => {
+          {usuarios.map((usuario) => {
             return (
-              <PortfolioCard
+              <UserCard
                 // Key es una palabra reservada en React
-                key={design.id}
+                key={usuario.id}
                 ////////////////////////////////
-                id={design.id}
-                picture={design.picture}
-                design={design}
-                update={updateMe}
+                id={usuario.id}
+                rol={usuario.rol}
+                nhc={usuario.Paciente.nhc}
+                nombre_paciente={usuario.Paciente.nombre}
+                primerApellido_paciente={usuario.Paciente.primerApellido}
+                segundoApellido_paciente={usuario.Paciente.segundoApellido}
+                genero_paciente={usuario.Paciente.genero}
+                fechaNacimiento_paciente={usuario.Paciente.fechaNacimiento}
+                nifPasaporte_paciente={usuario.Paciente.nifPasaporte}
+                calle_paciente={usuario.Paciente.calle}
+                numero_paciente={usuario.Paciente.numero}
+                puerta_paciente={usuario.Paciente.puerta}
+                codigoPostal_paciente={usuario.Paciente.codigoPostal}
+                ciudad_paciente={usuario.Paciente.ciudad}
+                nºColegiado={usuario.Profesional.nºColegiado}
+                nombre_profesional={usuario.Profesional.nombre}
+                primerApellido_profesional={usuario.Profesional.primerApellido}
+                segundoApellido_profesional={usuario.Profesional.segundoApellido}
+                genero_profesional={usuario.Profesional.genero}
+                fechaNacimiento_profesional={usuario.Profesional.fechaNacimiento}
+                nifPasaporte_profesional={usuario.Profesional.nifPasaporte}
+                tipoProfesional={usuario.Profesional.tipoProfesional}
+                calle_profesional={usuario.Profesional.calle}
+                numero_profesional={usuario.Profesional.numero}
+                puerta_profesional={usuario.Profesional.puerta}
+                codigoPostal_profesional={usuario.Profesional.codigoPostal}
+                ciudad_profesional={usuario.Profesional.ciudad}
+                usuario={usuario}
+                //update={updateMe}
               />
             );
           })}
@@ -79,7 +65,7 @@ export const Portfolio = () => {
       ) : (
         <div className="home">
           <div className="title">
-            No designs found, load designs to your portfolio
+            No se han encontrado usuarios
           </div>
         </div>
       )}

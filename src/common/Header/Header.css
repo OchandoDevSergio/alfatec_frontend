@@ -30,3 +30,9 @@
     color: darkblue;
 }
 
+.modalButton:hover {
+    transition: 0.2s;
+    color: darkblue;
+    cursor: pointer;
+}
+

@@ -86,7 +86,7 @@ export const UserCard = ({
         </div>
         </>
         )}
-                  <>
+                  {/* <>
             <Button
               variant="primary"
               className="makeArtist"
@@ -127,7 +127,7 @@ export const UserCard = ({
                 </div>
               </Modal.Footer>
             </Modal>
-          </>
+          </> */}
       </div>
     </>
   );

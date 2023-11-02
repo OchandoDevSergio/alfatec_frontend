@@ -12,50 +12,58 @@ export const Home = () => {
   useEffect(() => {
     searchUsuarios()
       .then((results) => {
-        setUsuarios();
+        //console.log("soy results",results)
+        setUsuarios(results.data.data);
       })
       .catch((error) => console.log(error));
   }, []);
 
+  useEffect(() => {
+    console.log("soy usuarios", usuarios)
+  }, [usuarios]);
+
   return (
-    <>
+    <div className="home">
       {usuarios.length > 0 ? (
         <div className="infinite-scroll-container">
           <div className="row spaceRow"></div>
 
           {usuarios.map((usuario) => {
+
             return (
+              
               <UserCard
+                
                 // Key es una palabra reservada en React
                 key={usuario.id}
                 ////////////////////////////////
                 id={usuario.id}
                 rol={usuario.rol}
-                nhc={usuario.Paciente.nhc}
-                nombre_paciente={usuario.Paciente.nombre}
-                primerApellido_paciente={usuario.Paciente.primerApellido}
-                segundoApellido_paciente={usuario.Paciente.segundoApellido}
-                genero_paciente={usuario.Paciente.genero}
-                fechaNacimiento_paciente={usuario.Paciente.fechaNacimiento}
-                nifPasaporte_paciente={usuario.Paciente.nifPasaporte}
-                calle_paciente={usuario.Paciente.calle}
-                numero_paciente={usuario.Paciente.numero}
-                puerta_paciente={usuario.Paciente.puerta}
-                codigoPostal_paciente={usuario.Paciente.codigoPostal}
-                ciudad_paciente={usuario.Paciente.ciudad}
-                nºColegiado={usuario.Profesional.nºColegiado}
-                nombre_profesional={usuario.Profesional.nombre}
-                primerApellido_profesional={usuario.Profesional.primerApellido}
-                segundoApellido_profesional={usuario.Profesional.segundoApellido}
-                genero_profesional={usuario.Profesional.genero}
-                fechaNacimiento_profesional={usuario.Profesional.fechaNacimiento}
-                nifPasaporte_profesional={usuario.Profesional.nifPasaporte}
-                tipoProfesional={usuario.Profesional.tipoProfesional}
-                calle_profesional={usuario.Profesional.calle}
-                numero_profesional={usuario.Profesional.numero}
-                puerta_profesional={usuario.Profesional.puerta}
-                codigoPostal_profesional={usuario.Profesional.codigoPostal}
-                ciudad_profesional={usuario.Profesional.ciudad}
+                nhc={usuario?.Pacientes[0]?.nhc}
+                nombre_paciente={usuario?.Pacientes[0]?.nombre}
+                primerApellido_paciente={usuario?.Pacientes[0]?.primerApellido}
+                segundoApellido_paciente={usuario?.Pacientes[0]?.segundoApellido}
+                genero_paciente={usuario?.Pacientes[0]?.genero}
+                fechaNacimiento_paciente={usuario?.Pacientes[0]?.fechaNacimiento}
+                nifPasaporte_paciente={usuario?.Pacientes[0]?.nifPasaporte}
+                calle_paciente={usuario?.Pacientes[0]?.calle}
+                numero_paciente={usuario?.Pacientes[0]?.numero}
+                puerta_paciente={usuario?.Pacientes[0]?.puerta}
+                codigoPostal_paciente={usuario?.Pacientes[0]?.codigoPostal}
+                ciudad_paciente={usuario?.Pacientes[0]?.ciudad}
+                nºColegiado={usuario?.Profesionals[0]?.nºColegiado}
+                nombre_profesional={usuario?.Profesionals[0]?.nombre}
+                primerApellido_profesional={usuario?.Profesionals[0]?.primerApellido}
+                segundoApellido_profesional={usuario?.Profesionals[0]?.segundoApellido}
+                genero_profesional={usuario?.Profesionals[0]?.genero}
+                fechaNacimiento_profesional={usuario?.Profesionals[0]?.fechaNacimiento}
+                nifPasaporte_profesional={usuario?.Profesionals[0]?.nifPasaporte}
+                tipoProfesional={usuario?.Profesionals[0]?.tipoProfesional}
+                calle_profesional={usuario?.Profesionals[0]?.calle}
+                numero_profesional={usuario?.Profesionals[0]?.numero}
+                puerta_profesional={usuario?.Profesionals[0]?.puerta}
+                codigoPostal_profesional={usuario?.Profesionals[0]?.codigoPostal}
+                ciudad_profesional={usuario?.Profesionals[0]?.ciudad}
                 usuario={usuario}
                 //update={updateMe}
               />
@@ -69,6 +77,6 @@ export const Home = () => {
           </div>
         </div>
       )}
-    </>
+      </div>
   );
 };

@@ -2,11 +2,11 @@
     margin: 1em;
     padding: 0;
 
-    height: 25vh;
+    height: 35vh;
     width: 35vw;
 
-    background-color: black;
-    color: white;
+    background-color:beige;
+    color:black;
 
     display: flex;
     justify-content: center;
@@ -22,9 +22,13 @@
 
 .userDesign:hover {
     transition: 0.2s;
-    background-color:goldenrod;
-    border: 0.1em solid black;
+    background-color:bisque;
     color:black;
+    cursor: pointer;
+}
+
+.bold {
+    font-weight:bold;
 }
 
 .makeArtist {

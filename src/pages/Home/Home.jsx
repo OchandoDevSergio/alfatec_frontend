@@ -26,7 +26,6 @@ export const Home = () => {
     <div className="home">
       {usuarios.length > 0 ? (
         <div className="infinite-scroll-container">
-          <div className="row spaceRow"></div>
 
           {usuarios.map((usuario) => {
 

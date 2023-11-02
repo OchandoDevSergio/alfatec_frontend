@@ -17,8 +17,12 @@ export const registerPaciente = async (registerPacienteBody) => {
 };
 
 
-//PROFESIONAL
+//PROFESIONALES
 
 export const registerProfesional = async (registerProfesionalBody) => {
   return axios.post(`http://localhost:5000/profesionales`, registerProfesionalBody);
+};
+
+export const deleteMedics = async () => {
+  return axios.delete(`http://localhost:5000/profesionales/medics`);
 };

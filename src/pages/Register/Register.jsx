@@ -3,7 +3,7 @@ import { Input } from "../../common/Input/Input";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { registerUser } from "../../services/apiCalls";
+//import { registerUser } from "../../services/apiCalls";
 
 export const Register = () => {
 
@@ -65,25 +65,25 @@ export const Register = () => {
     }));
   };
 
-  const registerElPaciente = () => {
-    if ((registerPacienteBody.nhc !== "")&&(registerPacienteBody.nombre !== "")&&(registerPacienteBody.primerApellido !== "")) {
-        setRegisterUserBody({rol: "paciente"})
-        registerUser(registerUserBody)
-        .then((resultado) => {
+  // const registerElPaciente = () => {
+  //   if ((registerPacienteBody.nhc !== "")&&(registerPacienteBody.nombre !== "")&&(registerPacienteBody.primerApellido !== "")) {
+  //       setRegisterUserBody({rol: "paciente"})
+  //       registerUser(registerUserBody)
+  //       .then((resultado) => {
         
-        })
-        .catch((error) => console.log(error));
+  //       })
+  //       .catch((error) => console.log(error));
 
-        registerPaciente(registerPacienteBody)
-        .then((resultado) => {
+  //       registerPaciente(registerPacienteBody)
+  //       .then((resultado) => {
         
-        })
-        .catch((error) => console.log(error));
+  //       })
+  //       .catch((error) => console.log(error));
         
-    } else {
-      console.log("Los campos obligatorios no han sido introducidos");
-    }
-  };
+  //   } else {
+  //     console.log("Los campos obligatorios no han sido introducidos");
+  //   }
+  // };
 
   const registerElProfesional = () => {
     if ((registerProfesionalBody.nºColegiado !== "")&&(registerProfesionalBody.nombre !== "")&&(registerProfesionalBody.primerApellido !== "")) {

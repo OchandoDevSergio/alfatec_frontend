@@ -15,7 +15,10 @@ export const Header = () => {
   return (
     <div className="header">
       <div className="buttonClicker" onClick={() => navigate("/")}>
-        INICIO
+        PACIENTES
+      </div>
+      <div className="buttonClicker" onClick={() => navigate("/profesionales")}>
+        PROFESIONALES
       </div>
       <div className="buttonClicker" >
         NUEVO USUARIO

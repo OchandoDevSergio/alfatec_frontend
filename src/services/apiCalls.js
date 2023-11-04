@@ -2,15 +2,19 @@ import axios from "axios";
 
 //USUARIOS
 
-export const searchUsuarios = async () => {
-  return await axios.get(`http://localhost:5000/usuarios`);
-};
+// export const searchUsuarios = async () => {
+//   return await axios.get(`http://localhost:5000/usuarios`);
+// };
 
-export const registerUser = async (registerUserBody) => {
-  return axios.post(`http://localhost:5000/usuarios`, registerUserBody);
-};
+// export const registerUser = async (registerUserBody) => {
+//   return axios.post(`http://localhost:5000/usuarios`, registerUserBody);
+// };
 
 //PACIENTES
+
+export const searchPacientes = async () => {
+  return await axios.get(`http://localhost:5000/pacientes`);
+};
 
 export const registerPaciente = async (registerPacienteBody) => {
   return axios.post(`http://localhost:5000/pacientes`, registerPacienteBody);
@@ -18,6 +22,10 @@ export const registerPaciente = async (registerPacienteBody) => {
 
 
 //PROFESIONALES
+
+export const searchProfesionales = async () => {
+  return await axios.get(`http://localhost:5000/profesionales`);
+};
 
 export const registerProfesional = async (registerProfesionalBody) => {
   return axios.post(`http://localhost:5000/profesionales`, registerProfesionalBody);

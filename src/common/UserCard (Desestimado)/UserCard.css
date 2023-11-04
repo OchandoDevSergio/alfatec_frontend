@@ -1,0 +1,36 @@
+.userDesign { 
+    margin: 1em;
+    padding: 0;
+
+    height: 35vh;
+    width: 35vw;
+
+    background-color:beige;
+    color:black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    border-radius: 1em;
+    border: 0.1em solid black;
+
+}
+
+.userDesign:hover {
+    transition: 0.2s;
+    background-color:bisque;
+    color:black;
+    cursor: pointer;
+}
+
+.bold {
+    font-weight:bold;
+}
+
+.lettering {
+    font-family: Cambria ;
+}

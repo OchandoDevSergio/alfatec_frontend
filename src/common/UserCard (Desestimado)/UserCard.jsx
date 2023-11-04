@@ -1,3 +1,5 @@
+//Archivo desestimado con la refactorización 
+//del proyecto en que se ha eliminado la tabla usuarios
 import "./UserCard.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -98,48 +100,6 @@ export const UserCard = ({
           </div> 
         </>
         )}
-                  {/* <>
-            <Button
-              variant="primary"
-              className="makeArtist"
-              onClick={() => showMe(user)}
-            >
-              Add Artist profile to this user
-            </Button>
-
-            <Modal
-              show={show}
-              onHide={() => setShow(false)}
-              className="modal-design"
-              aria-labelledby="example-custom-modal-styling-title"
-            >
-              <Modal.Header className="modal-design-header">
-                <Modal.Title>Add artist profile to {name}</Modal.Title>
-              </Modal.Header>
-              <Modal.Body className="modal-design-body">
-                <div className="bold lettering">Artist porfolio</div>
-                <div className="row inputRow">
-                  <Input
-                    type={"text"}
-                    placeholder="Introduce the artist portfolio URL"
-                    value={artistRegisterBody.portfolio}
-                    name={"portfolio"}
-                    className="defaultInput"
-                    manejadora={inputHandler}
-                  />
-                </div>
-              </Modal.Body>
-              <Modal.Footer className="modal-design-footer">
-                <div onClick={() => addArtistProfile()} className="modalButton">
-                  Add artist profile
-                </div>
-                <div className="spacer"></div>
-                <div onClick={handleClose} className="modalButton">
-                  Return
-                </div>
-              </Modal.Footer>
-            </Modal>
-          </> */}
       </div>
     </>
   );

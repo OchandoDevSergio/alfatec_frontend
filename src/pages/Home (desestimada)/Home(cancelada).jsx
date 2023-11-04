@@ -1,3 +1,7 @@
+//En fecha 03/11/2023 esta vista ha sido cancelada tras decidir una refactorización
+//que implica desestimar la tabla usuarios de la base de datos
+
+
 import "./Home.css";
 import { searchUsuarios } from "../../services/apiCalls";
 import { useEffect, useState } from "react";

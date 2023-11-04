@@ -1,16 +1,16 @@
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { deleteMedics } from "../../services/apiCalls";
-import Modal from "react-bootstrap/Modal";
+// import { useState } from "react";
+// import { deleteMedics } from "../../services/apiCalls";
+// import Modal from "react-bootstrap/Modal";
 
 export const Header = () => {
   const navigate = useNavigate();
-  const [show, setShow] = useState(false);
-  const medicsDelete = () => {
-    deleteMedics ();
-    setShow(false);
-  };
+  // const [show, setShow] = useState(false);
+  // const medicsDelete = () => {
+  //   deleteMedics ();
+  //   setShow(false);
+  // };
 
   return (
     <div className="header">
@@ -23,7 +23,7 @@ export const Header = () => {
       <div className="buttonClicker" >
         NUEVO USUARIO
       </div>
-      <>
+      {/* <>
       <div className="buttonClicker" onClick={() => setShow(true)}>
         BORRAR MÉDICOS
       </div>
@@ -50,7 +50,7 @@ export const Header = () => {
           </div>
         </Modal.Footer>
       </Modal>
-      </>
+      </> */}
     </div>
   );
 };

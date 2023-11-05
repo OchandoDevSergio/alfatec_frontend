@@ -27,6 +27,7 @@ export const PacienteCard = ({
   const reduxPacienteData = useSelector(pacienteDataCheck);
   const showPaciente = () => {
     dispatch(loadPacienteData({ pacienteData: paciente }))
+    navigate("/mostrarpaciente")
   };
 
   useEffect(() => {
@@ -36,6 +37,7 @@ export const PacienteCard = ({
   return (
     <>
       <div variant="primary" className="userDesign" onClick={() => showPaciente(paciente)}>
+          <div className="bold">PACIENTE</div>
           <div>
           <span className="bold">Id:</span> {id}{" "}
           <span className="bold">Número historial clínico:</span> {nhc}
@@ -49,7 +51,7 @@ export const PacienteCard = ({
           <span className="bold">Fecha de nacimiento:</span> {fechaNacimiento}{" "}
           <span className="bold">NIF/Pasaporte:</span> {nifPasaporte}
           </div>
-          <div>Dirección:</div>
+          <div className="bold">Dirección:</div>
           <div>
           <span className="bold">Ciudad:</span> {ciudad}{" "}
           <span className="bold">Calle:</span> {calle}

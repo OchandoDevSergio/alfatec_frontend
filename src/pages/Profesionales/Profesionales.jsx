@@ -44,6 +44,9 @@ export const Profesionales = () => {
         <div className="buttonClicker" onClick={() => setShow(true)}>
         BORRAR MÉDICOS
         </div>
+        <div className="buttonClicker" >
+        AÑADIR PROFESIONAL
+        </div>
 
         <Modal
         show={show}

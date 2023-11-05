@@ -1,0 +1,29 @@
+.showProfesional {
+    height: 85vh;
+    background-color: aqua;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+    .profesionalShowCard {
+        margin: 1em;
+        padding: 0;
+    
+        height: 35vh;
+        width: 35vw;
+    
+        background-color:beige;
+        color:black;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+        text-align: center;
+    
+        border-radius: 1em;
+        border: 0.1em solid black;
+    }

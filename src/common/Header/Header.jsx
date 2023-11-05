@@ -20,9 +20,9 @@ export const Header = () => {
       <div className="buttonClicker" onClick={() => navigate("/profesionales")}>
         PROFESIONALES
       </div>
-      <div className="buttonClicker" >
+      {/* <div className="buttonClicker" >
         NUEVO USUARIO
-      </div>
+      </div> */}
       {/* <>
       <div className="buttonClicker" onClick={() => setShow(true)}>
         BORRAR MÉDICOS

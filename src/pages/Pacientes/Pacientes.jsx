@@ -25,6 +25,11 @@ export const Pacientes = () => {
 
   return (
     <div className="home">
+      <div className="subHeader">
+        <div className="buttonClicker" >
+        AÑADIR PACIENTE
+        </div>
+      </div>
       {pacientes.length > 0 ? (
         <div className="infinite-scroll-container">
 

@@ -31,6 +31,7 @@ export const ProfesionalCard = ({
   const reduxProfesionalData = useSelector(profesionalDataCheck);
   const showProfesional = () => {
     dispatch(loadProfesionalData({ profesionalData: profesional }))
+    navigate("/mostrarprofesional")
   };
 
   useEffect(() => {
@@ -48,6 +49,7 @@ export const ProfesionalCard = ({
   return (
     <>
       <div variant="primary" className="userDesign" onClick={() => showProfesional(profesional)}>
+          <div className="bold">PROFESIONAL</div>
           <div>
           <span className="bold">Id:</span> {id}{" "}
           <span className="bold">Tipo de profesional:</span> {tipoProfesional}
@@ -62,7 +64,7 @@ export const ProfesionalCard = ({
           <span className="bold">Fecha de nacimiento:</span> {fechaNacimiento}{" "}
           <span className="bold">NIF/Pasaporte:</span> {nifPasaporte}
           </div>
-          <div>Dirección:</div>
+          <div className="bold">Dirección:</div>
           <div>
           <span className="bold">Ciudad:</span> {ciudad}{" "}
           <span className="bold">Calle:</span> {calle}

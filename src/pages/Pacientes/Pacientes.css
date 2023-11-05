@@ -2,6 +2,16 @@
     background-color: aqua;
 }
 
+.subHeader{
+    height: 5vh;
+    width: 100vw;
+    background-color: white;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .infinite-scroll-container {
     width: 100vw;
     overflow: auto;

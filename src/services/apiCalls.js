@@ -34,3 +34,9 @@ export const registerProfesional = async (registerProfesionalBody) => {
 export const deleteMedics = async () => {
   return axios.delete(`http://localhost:5000/profesionales/medics`);
 };
+
+//POLIZAS
+
+export const searchPolizas = async (pacienteID) => {
+  return await axios.get(`http://localhost:5000/polizas/${pacienteID}`);
+};

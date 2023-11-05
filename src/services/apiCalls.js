@@ -47,3 +47,7 @@ export const deleteProfesional = async (profesionalId) => {
 export const searchPolizas = async (pacienteID) => {
   return await axios.get(`http://localhost:5000/polizas/${pacienteID}`);
 };
+
+export const deletePoliza = async (polizaId) => {
+  return await axios.delete(`http://localhost:5000/polizas/${polizaId}`);
+};

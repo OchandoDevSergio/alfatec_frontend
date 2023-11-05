@@ -25,7 +25,7 @@ export const ProfesionalCard = ({
     // codigoPostal,
     // ciudad,
     profesional,
-  //update,
+    update,
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -44,14 +44,10 @@ export const ProfesionalCard = ({
   const profesionalDelete = (profesionalId) => {
     console.log("soy profesionalId", profesionalId.id)
     deleteProfesional (profesionalId.id)
-    // .then (()=>{
-    //   searchProfesionales()
-    //   .then((results) => {
-    //     console.log("soy results tras deleteMedics",results)
-    //     setProfesionales(results.data.data);
-    //   })
-    //   .catch((error) => console.log(error));
-    //})
+    .then (()=>{
+       update()
+    .catch((error) => console.log(error));
+    })
     setShowModal(false);
 
   };

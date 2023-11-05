@@ -18,6 +18,14 @@ export const ShowPaciente = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  const updateMe = () => {
+    searchPolizas(reduxPacienteData.pacienteData.id)
+      .then((results) => {
+        setPolizas(results.data.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
   // useEffect(() => {
   //   console.log("soy polizas", polizas)
   // }, [polizas]);
@@ -76,7 +84,7 @@ export const ShowPaciente = () => {
                 tipo={poliza.tipoSeguro}
                 nºTarjeta={poliza.nºTarjeta}
                 poliza={poliza}
-                //update={updateMe}
+                update={updateMe}
               />
             );
           })}

@@ -22,7 +22,7 @@ export const PacienteCard = ({
     // codigoPostal,
     // ciudad,
     paciente,
-  //update,
+    update,
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -40,14 +40,10 @@ export const PacienteCard = ({
   const pacienteDelete = (pacienteId) => {
     console.log("soy pacienteId", pacienteId.id)
     deletePaciente (pacienteId.id)
-    // .then (()=>{
-    //   searchProfesionales()
-    //   .then((results) => {
-    //     console.log("soy results tras deleteMedics",results)
-    //     setProfesionales(results.data.data);
-    //   })
-    //   .catch((error) => console.log(error));
-    //})
+    .then (()=>{
+      update()
+      })
+      .catch((error) => console.log(error));
     setShowModal(false);
 
   };

@@ -34,6 +34,15 @@ export const Profesionales = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  const updateMe = () => {
+    searchProfesionales()
+      .then((results) => {
+        console.log("soy results",results)
+        setProfesionales(results.data.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
   useEffect(() => {
     console.log("soy profesionales", profesionales)
   }, [profesionales]);
@@ -98,7 +107,7 @@ export const Profesionales = () => {
                 codigoPostal={profesional.codigoPostal}
                 ciudad={profesional.ciudad}
                 profesional={profesional}
-                //update={updateMe}
+                update={updateMe}
               />
             );
           })}

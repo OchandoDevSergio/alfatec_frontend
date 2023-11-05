@@ -1,10 +1,10 @@
 .showPaciente {
-/* height: 80vh; */
-background-color: aqua;
-display:flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+    /* height: 35em; */
+    background-color: aqua;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .pacienteShowCard {

@@ -20,8 +20,8 @@ export const registerPaciente = async (registerPacienteBody) => {
   return axios.post(`http://localhost:5000/pacientes`, registerPacienteBody);
 };
 
-export const deletePaciente = async (pacienteID) => {
-  return await axios.delete(`http://localhost:5000/pacientes/${pacienteID}`);
+export const deletePaciente = async (pacienteId) => {
+  return await axios.delete(`http://localhost:5000/pacientes/${pacienteId}`);
 };
 
 //PROFESIONALES
@@ -36,6 +36,10 @@ export const registerProfesional = async (registerProfesionalBody) => {
 
 export const deleteMedics = async () => {
   return axios.delete(`http://localhost:5000/profesionales/medics`);
+};
+
+export const deleteProfesional = async (profesionalId) => {
+  return await axios.delete(`http://localhost:5000/profesionales/${profesionalId}`);
 };
 
 //POLIZAS

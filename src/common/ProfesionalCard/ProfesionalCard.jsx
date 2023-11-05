@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loadProfesionalData } from "../../pages/profesionalSlice";
 import { profesionalDataCheck } from "../../pages/profesionalSlice";
+import { deleteProfesional } from "../../services/apiCalls";
 
 
 export const ProfesionalCard = ({
@@ -13,16 +14,16 @@ export const ProfesionalCard = ({
     nºColegiado,
     nombre,
     primerApellido,
-    segundoApellido,
-    genero,
-    fechaNacimiento,
-    nifPasaporte,
-    tipoProfesional,
-    calle,
-    numero,
-    puerta,
-    codigoPostal,
-    ciudad,
+    // segundoApellido,
+    // genero,
+    // fechaNacimiento,
+    // nifPasaporte,
+    // tipoProfesional,
+    // calle,
+    // numero,
+    // puerta,
+    // codigoPostal,
+    // ciudad,
     profesional,
   //update,
 }) => {

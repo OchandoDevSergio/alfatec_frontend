@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PacienteCard } from "../../common/PacienteCard/PacienteCard";
 
+
 export const Pacientes = () => {
   const [pacientes, setPacientes] = useState([]);
   const navigate = useNavigate();

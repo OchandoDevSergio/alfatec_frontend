@@ -1,5 +1,9 @@
 import "./PacienteCard.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loadPacienteData } from "../../pages/pacienteSlice";
+import { pacienteDataCheck } from "../../pages/pacienteSlice";
 
 export const PacienteCard = ({
     id,
@@ -18,10 +22,20 @@ export const PacienteCard = ({
     paciente,
   //update,
 }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const reduxPacienteData = useSelector(pacienteDataCheck);
+  const showPaciente = () => {
+    dispatch(loadPacienteData({ pacienteData: paciente }))
+  };
+
+  useEffect(() => {
+    console.log("soy pacienteDataCheck", reduxPacienteData.pacienteData)
+  }, [reduxPacienteData]);
 
   return (
     <>
-      <div variant="primary" className="userDesign">
+      <div variant="primary" className="userDesign" onClick={() => showPaciente(paciente)}>
           <div>
           <span className="bold">Id:</span> {id}{" "}
           <span className="bold">Número historial clínico:</span> {nhc}

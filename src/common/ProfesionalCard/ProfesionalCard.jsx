@@ -1,7 +1,12 @@
 import "./ProfesionalCard.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loadProfesionalData } from "../../pages/profesionalSlice";
+import { profesionalDataCheck } from "../../pages/profesionalSlice";
+
 
 export const ProfesionalCard = ({
     id,
@@ -21,15 +26,28 @@ export const ProfesionalCard = ({
     profesional,
   //update,
 }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const reduxProfesionalData = useSelector(profesionalDataCheck);
+  const showProfesional = () => {
+    dispatch(loadProfesionalData({ profesionalData: profesional }))
+  };
+
+  useEffect(() => {
+    console.log("soy profesionalDataCheck", reduxProfesionalData.profesionalData)
+  }, [reduxProfesionalData]);
+
   const [show, setShow] = useState(false);
 
   const showMe = () => {
     setShow(true);
   };
 
+
+
   return (
     <>
-      <div variant="primary" className="userDesign">
+      <div variant="primary" className="userDesign" onClick={() => showProfesional(profesional)}>
           <div>
           <span className="bold">Id:</span> {id}{" "}
           <span className="bold">Tipo de profesional:</span> {tipoProfesional}

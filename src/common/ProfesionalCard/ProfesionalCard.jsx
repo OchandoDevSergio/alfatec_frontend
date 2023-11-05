@@ -34,46 +34,74 @@ export const ProfesionalCard = ({
     navigate("/mostrarprofesional")
   };
 
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     console.log("soy profesionalDataCheck", reduxProfesionalData.profesionalData)
   }, [reduxProfesionalData]);
 
-  const [show, setShow] = useState(false);
+  const profesionalDelete = (profesionalId) => {
+    console.log("soy profesionalId", profesionalId.id)
+    deleteProfesional (profesionalId.id)
+    // .then (()=>{
+    //   searchProfesionales()
+    //   .then((results) => {
+    //     console.log("soy results tras deleteMedics",results)
+    //     setProfesionales(results.data.data);
+    //   })
+    //   .catch((error) => console.log(error));
+    //})
+    setShowModal(false);
 
-  const showMe = () => {
-    setShow(true);
   };
 
 
 
   return (
     <>
-      <div variant="primary" className="userDesign" onClick={() => showProfesional(profesional)}>
+      <div variant="primary" className="profesionalDesign">
           <div className="bold">PROFESIONAL</div>
           <div>
           <span className="bold">Id:</span> {id}{" "}
-          <span className="bold">Tipo de profesional:</span> {tipoProfesional}
-          </div>
-          <div><span className="bold">Número de colegiado:</span> {nºColegiado}</div>
+          <span className="bold">Número de colegiado:</span> {nºColegiado}</div>
           <div>
           <span className="bold">Nombre:</span> {nombre}{" "}
-          <span className="bold">Apellidos:</span> {primerApellido} {segundoApellido}{" "}
-          <span className="bold">Género:</span> {genero}
-          </div>
-          <div>
-          <span className="bold">Fecha de nacimiento:</span> {fechaNacimiento}{" "}
-          <span className="bold">NIF/Pasaporte:</span> {nifPasaporte}
-          </div>
-          <div className="bold">Dirección:</div>
-          <div>
-          <span className="bold">Ciudad:</span> {ciudad}{" "}
-          <span className="bold">Calle:</span> {calle}
-          </div>
-          <div>
-          <span className="bold">Nº:</span> {numero}{" "}
-          <span className="bold">Pta:</span> {puerta}{" "}
-          <span className="bold">C.P:</span> {codigoPostal}   
+          <span className="bold">Apellido:</span> {primerApellido}
           </div> 
+          <div className="buttonsDiv">
+            <div className="buttonClicker" onClick={() => showProfesional(profesional)}>
+            Examinar
+            </div>
+            <div className="buttonClicker" onClick={() => navigate("/profesionales")}>
+            Modificar
+            </div>
+            <div className="buttonClicker" onClick={() => setShowModal(true)}>
+            Eliminar
+            </div>
+
+          <Modal
+          show={showModal}
+          onHide={() => setShowModal(false)}
+          className="modal-design"
+          aria-labelledby="example-custom-modal-styling-title"
+          >
+          <Modal.Header className="modalConfirm-design-header">
+          <Modal.Title>Atención</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modalConfirm-design-body">
+          <div>Está seguro de que desea eliminar al profesional de la base de datos?</div>
+          </Modal.Body>
+          <Modal.Footer className="modalConfirm-design-footer">
+            <div onClick={() => profesionalDelete({id})} className="modalButton">
+            Eliminar profesional
+            </div>
+            <div className="spacer"></div>
+            <div onClick={() => setShowModal(false)} className="modalButton">
+            Regresar
+            </div>
+            </Modal.Footer>
+          </Modal>
+          </div>
       </div>
     </>
   );

@@ -39,7 +39,7 @@ export const Profesionales = () => {
   }, [profesionales]);
 
   return (
-    <div className="home">
+    <div className="profesionales">
       <div className="subHeader">
         <div className="buttonClicker" onClick={() => setShow(true)}>
         BORRAR MÉDICOS

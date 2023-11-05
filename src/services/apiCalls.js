@@ -20,6 +20,9 @@ export const registerPaciente = async (registerPacienteBody) => {
   return axios.post(`http://localhost:5000/pacientes`, registerPacienteBody);
 };
 
+export const deletePaciente = async (pacienteID) => {
+  return await axios.delete(`http://localhost:5000/pacientes/${pacienteID}`);
+};
 
 //PROFESIONALES
 

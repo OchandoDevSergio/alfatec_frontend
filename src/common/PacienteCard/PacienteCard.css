@@ -1,9 +1,9 @@
-.userDesign { 
+.pacienteDesign { 
     margin: 1em;
     padding: 0;
 
-    height: 35vh;
-    width: 35vw;
+    height: 10em;
+    width: 25em;
 
     background-color:beige;
     color:black;
@@ -20,32 +20,14 @@
 
 }
 
-.userDesign:hover {
+.buttonClicker:hover {
     transition: 0.2s;
-    background-color:bisque;
     color:black;
     cursor: pointer;
 }
 
 .bold {
     font-weight:bold;
-}
-
-.makeArtist {
-    background-color: black;
-    color: rgb(198, 124, 71);
-    border-radius: 1em;
-    border: 0.1em solid black;
-
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-.makeArtist:hover {
-    transition: 0.2s;
-    background-color:rgb(61, 59, 59);
-    border: 0.1em solid black;
-    color:rgb(198, 124, 71);
 }
 
 .modal-design-body {
@@ -60,4 +42,9 @@
 
 .lettering {
     font-family: Cambria ;
+}
+
+.buttonsDiv {
+    display: flex;
+    flex-direction: row;
 }

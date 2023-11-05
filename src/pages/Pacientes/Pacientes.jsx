@@ -24,7 +24,7 @@ export const Pacientes = () => {
   }, [pacientes]);
 
   return (
-    <div className="home">
+    <div className="pacientes">
       <div className="subHeader">
         <div className="buttonClicker" >
         AÑADIR PACIENTE

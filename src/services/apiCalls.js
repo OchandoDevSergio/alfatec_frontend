@@ -16,8 +16,8 @@ export const searchPacientes = async () => {
   return await axios.get(`http://localhost:5000/pacientes`);
 };
 
-export const registerPaciente = async (registerPacienteBody) => {
-  return axios.post(`http://localhost:5000/pacientes`, registerPacienteBody);
+export const registerPaciente = async (pacienteBody) => {
+  return axios.post(`http://localhost:5000/pacientes`, pacienteBody);
 };
 
 export const deletePaciente = async (pacienteId) => {

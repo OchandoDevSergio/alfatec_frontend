@@ -35,7 +35,7 @@ export const Pacientes = () => {
   return (
     <div className="pacientes">
       <div className="subHeader">
-        <div className="buttonClicker" >
+        <div className="buttonClicker" onClick={() => navigate("/pacienteadd")}>
         AÑADIR PACIENTE
         </div>
       </div>

@@ -33,10 +33,12 @@ export const ProfesionalAdd = () => {
   };
 
   const dropdownHandler = (e) => {
-    setProfesionalBody({
+    setProfesionalBody((prevState) => ({
+      ...prevState,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
+
 
   const profesionalRegister = () => {
     console.log("entra")

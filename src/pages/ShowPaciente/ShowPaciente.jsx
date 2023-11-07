@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { searchPolizas } from "../../services/apiCalls";
 import { PolizaCard } from "../../common/PolizaCard/PolizaCard";
+import { useNavigate } from "react-router-dom";
 
 export const ShowPaciente = () => {
-
+  const navigate = useNavigate();
   const reduxPacienteData = useSelector(pacienteDataCheck);
   const [polizas, setPolizas] = useState([]);
 
@@ -34,7 +35,7 @@ export const ShowPaciente = () => {
     return (
       <>      
       <div className="subHeader">
-        <div className="buttonClicker" >
+        <div className="buttonClicker" onClick={() => navigate("/polizaadd")}>
         AÑADIR POLIZA AL PACIENTE
         </div>
       </div>

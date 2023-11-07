@@ -32,6 +32,12 @@ export const ProfesionalAdd = () => {
 
   };
 
+  const dropdownHandler = (e) => {
+    setProfesionalBody({
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const profesionalRegister = () => {
     console.log("entra")
       registerProfesional(profesionalBody)
@@ -47,17 +53,24 @@ export const ProfesionalAdd = () => {
       <div className="row inputRow">
         <div className="col-2"></div>
         <div className="col-10">
-      <div className="scripting">Tipo de profesional</div>
-        <Input
-          type={"text"}
-          placeholder="Introduce el tipo de profesional"
-          value={profesionalBody.tipoProfesional}
-          name={"tipoProfesional"}
-          className="defaultInput"
-          manejadora={inputHandler}
-        />
-      </div>
-      </div>
+      <div className="row inputRow">
+        <div className="scripting">Tipo de profesional</div>
+          <select
+            className="tipoProfesionalDropdown"
+            onChange={dropdownHandler}
+            name={"tipoProfesional"}
+          >
+            <option value="Selecciona un tipo de profesional">
+              {" "}
+              -- Selecciona un tipo de profesional --{" "}
+            </option>
+            <option value="médico">médico</option>
+            <option value="enfermero">enfermero</option>
+            <option value="administrativo">administrativo</option>
+            </select>
+        </div>
+        </div>
+        </div>
       <div className="col-2"></div>
         <div className="col-3 inputsCol">
           <div className="row inputRow">

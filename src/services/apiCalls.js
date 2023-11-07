@@ -1,6 +1,6 @@
 import axios from "axios";
 
-//USUARIOS
+//USUARIOS descartado con la refactorización sin la tabla usuarios
 
 // export const searchUsuarios = async () => {
 //   return await axios.get(`http://localhost:5000/usuarios`);
@@ -31,7 +31,7 @@ export const searchProfesionales = async () => {
 };
 
 export const registerProfesional = async (profesionalBody) => {
-  return axios.post(`http://localhost:5000/pacientes`, profesionalBody);
+  return axios.post(`http://localhost:5000/profesionales`, profesionalBody);
 };
 
 export const deleteMedics = async () => {
@@ -50,4 +50,8 @@ export const searchPolizas = async (pacienteID) => {
 
 export const deletePoliza = async (polizaId) => {
   return await axios.delete(`http://localhost:5000/polizas/${polizaId}`);
+};
+
+export const registerPoliza = async (polizaBody) => {
+  return axios.post(`http://localhost:5000/polizas`, polizaBody);
 };

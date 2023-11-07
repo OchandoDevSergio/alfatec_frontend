@@ -42,3 +42,7 @@
     justify-content: center;
     background-color: blueviolet;
 }
+
+.tipoProfesionalDropdown {
+    width: 20em;
+}

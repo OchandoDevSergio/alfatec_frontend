@@ -53,7 +53,7 @@ export const Profesionales = () => {
         <div className="buttonClicker" onClick={() => setShow(true)}>
         BORRAR MÉDICOS
         </div>
-        <div className="buttonClicker" >
+        <div className="buttonClicker" onClick={() => navigate("/profesionaladd")}>
         AÑADIR PROFESIONAL
         </div>
 

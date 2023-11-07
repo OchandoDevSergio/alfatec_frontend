@@ -45,6 +45,7 @@
 
 .infinite-scroll-container-polizas {
     width: 100vw;
+    background-color: aqua;
     overflow: auto;
     display:flex;
     flex-direction: column;

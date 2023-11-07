@@ -1,20 +1,21 @@
-import "./PacienteAdd.css";
+import "./ProfesionalAdd.css";
 import { Input } from "../../common/Input/Input";
 import { useState } from "react";
-import { registerPaciente } from "../../services/apiCalls";
+import { registerProfesional } from "../../services/apiCalls";
 //import { useNavigate } from "react-router-dom";
 
-export const PacienteAdd = () => {
+export const ProfesionalAdd = () => {
   //const navigate = useNavigate();
 
-  const [pacienteBody, setPacienteBody] = useState({
-    nhc:  "",
+  const [profesionalBody, setProfesionalBody] = useState({
+    nºColegiado:  "",
     nombre:  "",
     primerApellido:  "",
     segundoApellido:  "",
     genero:  "",
     fechaNacimiento:  "",
     nifPasaporte:  "",
+    tipoProfesional: "",
     calle:  "",
     numero:  "",
     puerta:  "",
@@ -24,34 +25,48 @@ export const PacienteAdd = () => {
 
   //BIND
   const inputHandler = (e) => {
-    setPacienteBody((prevState) => ({
+    setProfesionalBody((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
 
   };
 
-  const pacienteRegister = () => {
+  const profesionalRegister = () => {
     console.log("entra")
-      registerPaciente(pacienteBody)
+      registerProfesional(profesionalBody)
         .then((resultado) => {
         })
         .catch((error) => console.log(error));
   };
 
   return (
-    <div className="container-fluid pacienteAdd">
+    <div className="container-fluid profesionalAdd">
       <div className="space"></div>
       <div className="row upRowRegister">
+      <div className="row inputRow">
+        <div className="col-2"></div>
+        <div className="col-10">
+      <div className="scripting">Tipo de profesional</div>
+        <Input
+          type={"text"}
+          placeholder="Introduce el tipo de profesional"
+          value={profesionalBody.tipoProfesional}
+          name={"tipoProfesional"}
+          className="defaultInput"
+          manejadora={inputHandler}
+        />
+      </div>
+      </div>
       <div className="col-2"></div>
         <div className="col-3 inputsCol">
           <div className="row inputRow">
-            <div className="scripting">NHC</div>
+            <div className="scripting">Número de colegiado</div>
             <Input
               type={"number"}
-              placeholder="Introduce el numero de historial de paciente"
-              value={pacienteBody.nhc}
-              name={"nhc"}
+              placeholder="Introduce el numero de colegiado del profesional"
+              value={profesionalBody.nºColegiado}
+              name={"nºColegiado"}
               className="defaultInput"
               manejadora={inputHandler}
             />
@@ -61,7 +76,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce el nombre"
-              value={pacienteBody.nombre}
+              value={profesionalBody.nombre}
               name={"nombre"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -72,7 +87,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce el primer apellido"
-              value={pacienteBody.primerApellido}
+              value={profesionalBody.primerApellido}
               name={"primerApellido"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -83,7 +98,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce el primer apellido"
-              value={pacienteBody.segundoApellido}
+              value={profesionalBody.segundoApellido}
               name={"segundoApellido"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -96,7 +111,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce el género"
-              value={pacienteBody.genero}
+              value={profesionalBody.genero}
               name={"genero"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -107,7 +122,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce la fecha de nacimiento"
-              value={pacienteBody.fechaNacimiento}
+              value={profesionalBody.fechaNacimiento}
               name={"fechaNacimiento"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -118,7 +133,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce el NIF o pasaporte"
-              value={pacienteBody.nifPasaporte}
+              value={profesionalBody.nifPasaporte}
               name={"nifPasaporte"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -129,7 +144,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce la ciudad"
-              value={pacienteBody.ciudad}
+              value={profesionalBody.ciudad}
               name={"ciudad"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -142,7 +157,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce la calle"
-              value={pacienteBody.calle}
+              value={profesionalBody.calle}
               name={"calle"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -153,7 +168,7 @@ export const PacienteAdd = () => {
             <Input
               type={"number"}
               placeholder="Introduce el número"
-              value={pacienteBody.numero}
+              value={profesionalBody.numero}
               name={"numero"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -164,7 +179,7 @@ export const PacienteAdd = () => {
             <Input
               type={"text"}
               placeholder="Introduce la puerta"
-              value={pacienteBody.puerta}
+              value={profesionalBody.puerta}
               name={"puerta"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -175,7 +190,7 @@ export const PacienteAdd = () => {
             <Input
               type={"number"}
               placeholder="Introduce el código postal"
-              value={pacienteBody.codigoPostal}
+              value={profesionalBody.codigoPostal}
               name={"codigoPostal"}
               className="defaultInput"
               manejadora={inputHandler}
@@ -185,8 +200,8 @@ export const PacienteAdd = () => {
         <div className="col-1"></div>
       </div>
       <div className="row downRowRegister">
-        <div className="register" onClick={() => pacienteRegister()}>
-          Añadir el paciente
+        <div className="register" onClick={() => profesionalRegister()}>
+          Añadir el profesional
         </div>
       </div>
     </div>

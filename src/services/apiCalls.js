@@ -30,8 +30,8 @@ export const searchProfesionales = async () => {
   return await axios.get(`http://localhost:5000/profesionales`);
 };
 
-export const registerProfesional = async (registerProfesionalBody) => {
-  return axios.post(`http://localhost:5000/profesionales`, registerProfesionalBody);
+export const registerProfesional = async (profesionalBody) => {
+  return axios.post(`http://localhost:5000/pacientes`, profesionalBody);
 };
 
 export const deleteMedics = async () => {

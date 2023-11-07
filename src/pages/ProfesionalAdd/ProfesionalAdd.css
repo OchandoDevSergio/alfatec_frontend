@@ -1,4 +1,4 @@
-.pacienteAdd {
+.profesionalAdd {
     background-color: aqua;
     height: 38em;
 }
@@ -17,7 +17,7 @@
 
 .register {
     margin: 1em;
-    width: 10em;
+    width: 12em;
 
     color: black;
     font-weight: bold;
@@ -35,4 +35,10 @@
     transition: 0.2s;
     color:darkcyan;
     cursor: pointer;
+}
+
+.profesionalTipe{
+    display: flex;
+    justify-content: center;
+    background-color: blueviolet;
 }

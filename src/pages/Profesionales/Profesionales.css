@@ -15,6 +15,7 @@
 
 .infinite-scroll-container {
     width: 100vw;
+    background-color: aqua;
     overflow: auto;
     display:flex;
     align-items:center;

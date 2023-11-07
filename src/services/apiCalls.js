@@ -46,6 +46,10 @@ export const deleteProfesional = async (profesionalId) => {
   return await axios.delete(`http://localhost:5000/profesionales/${profesionalId}`);
 };
 
+export const modifyProfesional = async (profesionalBody) => {
+  return axios.put(`http://localhost:5000/profesionales`, profesionalBody);
+};
+
 //POLIZAS
 
 export const searchPolizas = async (pacienteID) => {

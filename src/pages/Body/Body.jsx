@@ -8,6 +8,7 @@ import { PacienteAdd } from "../PaceinteAdd/PacienteAdd";
 import { ProfesionalAdd } from "../ProfesionalAdd/ProfesionalAdd";
 import { PolizaAdd } from "../PolizaAdd/PolizaAdd"; 
 import { PacienteModify } from "../PacienteModify/PacienteModify";
+import { ProfesionalModify } from "../ProfesionalModify/ProfesionalModify";
 // import { Profile } from "../Profile/Profile";
 
 export const Body = () => {
@@ -22,6 +23,7 @@ export const Body = () => {
         <Route path="/profesionaladd" element={<ProfesionalAdd />} />
         <Route path="/polizaadd" element={<PolizaAdd />} />
         <Route path="/modificarpaciente" element={<PacienteModify />} />
+        <Route path="/modificarprofesional" element={<ProfesionalModify />} />
       </Routes>
     </>
   );

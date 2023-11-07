@@ -14,16 +14,6 @@ export const ProfesionalCard = ({
     nºColegiado,
     nombre,
     primerApellido,
-    // segundoApellido,
-    // genero,
-    // fechaNacimiento,
-    // nifPasaporte,
-    // tipoProfesional,
-    // calle,
-    // numero,
-    // puerta,
-    // codigoPostal,
-    // ciudad,
     profesional,
     update,
 }) => {
@@ -52,7 +42,10 @@ export const ProfesionalCard = ({
 
   };
 
-
+  const modifyProfesional = () => {
+    dispatch(loadProfesionalData({ profesionalData: profesional }))
+    navigate("/modificarprofesional")
+  };
 
   return (
     <>
@@ -69,7 +62,7 @@ export const ProfesionalCard = ({
             <div className="buttonClicker" onClick={() => showProfesional(profesional)}>
             Examinar
             </div>
-            <div className="buttonClicker" onClick={() => navigate("/profesionales")}>
+            <div className="buttonClicker" onClick={() => modifyProfesional(profesional)}>
             Modificar
             </div>
             <div className="buttonClicker" onClick={() => setShowModal(true)}>

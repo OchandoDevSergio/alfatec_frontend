@@ -1,13 +1,34 @@
-import "./ProfesionalAdd.css";
+import "./ProfesionalModify.css";
 import { Input } from "../../common/Input/Input";
 import { useState } from "react";
-import { registerProfesional } from "../../services/apiCalls";
+import { profesionalDataCheck } from "../profesionalSlice";
+import { useSelector } from "react-redux";
+import { modifyProfesional } from "../../services/apiCalls";
+
 //import { useNavigate } from "react-router-dom";
 
-export const ProfesionalAdd = () => {
+export const ProfesionalModify = () => {
   //const navigate = useNavigate();
-
+  const reduxProfesionalData = useSelector(profesionalDataCheck);
+  console.log("soy reduxProfesionalData", reduxProfesionalData)
   const [profesionalBody, setProfesionalBody] = useState({
+    id: reduxProfesionalData?.profesionalData?.id,
+    nºColegiado:  reduxProfesionalData?.profesionalData?.nºColegiado,
+    nombre:  reduxProfesionalData?.profesionalData?.nombre,
+    primerApellido:  reduxProfesionalData?.profesionalData?.primerApellido,
+    segundoApellido:  reduxProfesionalData?.profesionalData?.segundoApellido,
+    genero:  reduxProfesionalData?.profesionalData?.genero,
+    fechaNacimiento:  reduxProfesionalData?.profesionalData?.fechaNacimiento,
+    nifPasaporte:  reduxProfesionalData?.profesionalData?.nifPasaporte,
+    tipoProfesional: reduxProfesionalData?.profesionalData?.tipoProfesional,
+    calle:  reduxProfesionalData?.profesionalData?.calle,
+    numero:  reduxProfesionalData?.profesionalData?.numero,
+    puerta:  reduxProfesionalData?.profesionalData?.puerta,
+    codigoPostal:  reduxProfesionalData?.profesionalData?.codigoPostal,
+    ciudad:  reduxProfesionalData?.profesionalData?.ciudad
+  });
+
+  const [profesionalBodyError, setProfesionalBodyError] = useState({
     nºColegiado:  "",
     nombre:  "",
     primerApellido:  "",
@@ -29,7 +50,6 @@ export const ProfesionalAdd = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-
   };
 
   const dropdownHandler = (e) => {
@@ -39,10 +59,10 @@ export const ProfesionalAdd = () => {
     }));
   };
 
-
-  const profesionalRegister = () => {
+  const profesionalModify = () => {
     console.log("entra")
-      registerProfesional(profesionalBody)
+      console.log("soy profesionalbody", profesionalBody)
+      modifyProfesional(profesionalBody)
         .then((resultado) => {
         })
         .catch((error) => console.log(error));
@@ -57,19 +77,56 @@ export const ProfesionalAdd = () => {
         <div className="col-10">
       <div className="row inputRow">
         <div className="scripting">Tipo de profesional</div>
-          <select
+        {reduxProfesionalData?.profesionalData?.tipoProfesional === "médico" && (
+            <select
             className="tipoProfesionalDropdown"
             onChange={dropdownHandler}
             name={"tipoProfesional"}
-          >
-            <option value="Selecciona un tipo de profesional">
-              {" "}
-              -- Selecciona un tipo de profesional --{" "}
+            >
+            <option value={reduxProfesionalData?.profesionalData?.tipoProfesional}>
+            {"Mantener como "}{reduxProfesionalData?.profesionalData?.tipoProfesional}
             </option>
-            <option value="médico">médico</option>
-            <option value="enfermero">enfermero</option>
-            <option value="administrativo">administrativo</option>
-            </select>
+            <option value="enfermero">Modificar a enfermero</option>
+            <option value="administrativo">Modificar a administrativo</option>
+            </select>)}
+        {reduxProfesionalData?.profesionalData?.tipoProfesional === "enfermero" && (
+            <select
+            className="tipoProfesionalDropdown"
+            onChange={dropdownHandler}
+            name={"tipoProfesional"}
+            >
+            <option value={reduxProfesionalData?.profesionalData?.tipoProfesional}>
+            {"Mantener como "}{reduxProfesionalData?.profesionalData?.tipoProfesional}
+            </option>
+            <option value="médico">Modificar a médico</option>
+            <option value="administrativo">Modificar a administrativo</option>
+            </select>)}
+        {reduxProfesionalData?.profesionalData?.tipoProfesional === "administrativo" && (
+            <select
+            className="tipoProfesionalDropdown"
+            onChange={dropdownHandler}
+            name={"tipoProfesional"}
+            >
+            <option value={reduxProfesionalData?.profesionalData?.tipoProfesional}>
+            {"Mantener como "}{reduxProfesionalData?.profesionalData?.tipoProfesional}
+            </option>
+            <option value="médico">Modificar a médico</option>
+            <option value="enfermero">Modificar a enfermero</option>
+            </select>)}
+        {reduxProfesionalData?.profesionalData?.tipoProfesional !== ("administrativo"||"médico"||"enfermero") && (
+          <select
+          className="tipoProfesionalDropdown"
+          onChange={dropdownHandler}
+          name={"tipoProfesional"}
+        >
+          <option value="Selecciona un tipo de profesional">
+            {" "}
+            -- Selecciona un tipo de profesional --{" "}
+          </option>
+          <option value="médico">médico</option>
+          <option value="enfermero">enfermero</option>
+          <option value="administrativo">administrativo</option>
+          </select>)}
         </div>
         </div>
         </div>
@@ -79,7 +136,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Número de colegiado</div>
             <Input
               type={"number"}
-              placeholder="Introduce el numero de colegiado del profesional"
+              placeholder=""
               value={profesionalBody.nºColegiado}
               name={"nºColegiado"}
               className="defaultInput"
@@ -90,7 +147,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Nombre</div>
             <Input
               type={"text"}
-              placeholder="Introduce el nombre"
+              placeholder=""
               value={profesionalBody.nombre}
               name={"nombre"}
               className="defaultInput"
@@ -101,7 +158,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Primer apellido</div>
             <Input
               type={"text"}
-              placeholder="Introduce el primer apellido"
+              placeholder=""
               value={profesionalBody.primerApellido}
               name={"primerApellido"}
               className="defaultInput"
@@ -112,7 +169,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Segundo apellido</div>
             <Input
               type={"text"}
-              placeholder="Introduce el segundo apellido"
+              placeholder=""
               value={profesionalBody.segundoApellido}
               name={"segundoApellido"}
               className="defaultInput"
@@ -125,7 +182,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Género</div>
             <Input
               type={"text"}
-              placeholder="Introduce el género"
+              placeholder=""
               value={profesionalBody.genero}
               name={"genero"}
               className="defaultInput"
@@ -136,7 +193,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Fecha de nacimiento</div>
             <Input
               type={"text"}
-              placeholder="Introduce la fecha de nacimiento"
+              placeholder=""
               value={profesionalBody.fechaNacimiento}
               name={"fechaNacimiento"}
               className="defaultInput"
@@ -147,7 +204,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">NIF/Pasaporte</div>
             <Input
               type={"text"}
-              placeholder="Introduce el NIF o pasaporte"
+              placeholder=""
               value={profesionalBody.nifPasaporte}
               name={"nifPasaporte"}
               className="defaultInput"
@@ -158,7 +215,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Ciudad</div>
             <Input
               type={"text"}
-              placeholder="Introduce la ciudad"
+              placeholder=""
               value={profesionalBody.ciudad}
               name={"ciudad"}
               className="defaultInput"
@@ -171,7 +228,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Calle</div>
             <Input
               type={"text"}
-              placeholder="Introduce la calle"
+              placeholder=""
               value={profesionalBody.calle}
               name={"calle"}
               className="defaultInput"
@@ -182,7 +239,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Número</div>
             <Input
               type={"number"}
-              placeholder="Introduce el número"
+              placeholder=""
               value={profesionalBody.numero}
               name={"numero"}
               className="defaultInput"
@@ -193,7 +250,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Puerta</div>
             <Input
               type={"text"}
-              placeholder="Introduce la puerta"
+              placeholder=""
               value={profesionalBody.puerta}
               name={"puerta"}
               className="defaultInput"
@@ -204,7 +261,7 @@ export const ProfesionalAdd = () => {
             <div className="scripting">Código postal</div>
             <Input
               type={"number"}
-              placeholder="Introduce el código postal"
+              placeholder=""
               value={profesionalBody.codigoPostal}
               name={"codigoPostal"}
               className="defaultInput"
@@ -215,8 +272,8 @@ export const ProfesionalAdd = () => {
         <div className="col-1"></div>
       </div>
       <div className="row downRowRegister">
-        <div className="register" onClick={() => profesionalRegister()}>
-          Añadir el profesional
+        <div className="register" onClick={() => profesionalModify()}>
+          Modificar el profesional
         </div>
       </div>
     </div>

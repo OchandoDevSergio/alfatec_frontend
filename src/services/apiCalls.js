@@ -63,3 +63,7 @@ export const deletePoliza = async (polizaId) => {
 export const registerPoliza = async (polizaBody) => {
   return axios.post(`http://localhost:5000/polizas`, polizaBody);
 };
+
+export const modifyPoliza = async (polizaBody) => {
+  return axios.put(`http://localhost:5000/polizas`, polizaBody);
+};

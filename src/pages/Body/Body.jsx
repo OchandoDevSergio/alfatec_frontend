@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 //import { Home } from "../Home/Home"; DESESTIMADA
+//import { Profile } from "../Profile/Profile"; DESESTIMADA
 import { Pacientes } from "../Pacientes/Pacientes";
 import { Profesionales } from "../Profesionales/Profesionales";
 import { ShowProfesional } from "../ShowProfesional/ShowProfesional";
@@ -9,7 +10,8 @@ import { ProfesionalAdd } from "../ProfesionalAdd/ProfesionalAdd";
 import { PolizaAdd } from "../PolizaAdd/PolizaAdd"; 
 import { PacienteModify } from "../PacienteModify/PacienteModify";
 import { ProfesionalModify } from "../ProfesionalModify/ProfesionalModify";
-// import { Profile } from "../Profile/Profile";
+import { PolizaModify } from "../PolizaModify/PolizaModify";
+
 
 export const Body = () => {
   return (
@@ -24,6 +26,7 @@ export const Body = () => {
         <Route path="/polizaadd" element={<PolizaAdd />} />
         <Route path="/modificarpaciente" element={<PacienteModify />} />
         <Route path="/modificarprofesional" element={<ProfesionalModify />} />
+        <Route path="/modificarpoliza" element={<PolizaModify />} />
       </Routes>
     </>
   );

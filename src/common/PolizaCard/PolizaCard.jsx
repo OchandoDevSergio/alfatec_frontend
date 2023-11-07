@@ -3,6 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 import { deletePoliza } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { loadPolizaData } from "../../pages/polizaSlice";
 
 export const PolizaCard = ({
     id,
@@ -13,6 +15,7 @@ export const PolizaCard = ({
     poliza,
     update,
 }) => {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const polizaDelete = (polizaId) => {
@@ -22,6 +25,11 @@ export const PolizaCard = ({
       update();
     })
     setShowModal(false);
+  };
+
+  const modifyPoliza = () => {
+    dispatch(loadPolizaData({ polizaData: poliza }))
+    navigate("/modificarpoliza")
   };
 
   return (
@@ -40,7 +48,7 @@ export const PolizaCard = ({
           <span className="bold">Nº de tarjeta:</span> {nºTarjeta}
           </div> 
           <div className="buttonsDiv">
-            <div className="buttonClicker" onClick={() => navigate("/profesionales")}>
+            <div className="buttonClicker" onClick={() => modifyPoliza(poliza)}>
             Modificar
             </div>
             <div className="buttonClicker" onClick={() => setShowModal(true)}>

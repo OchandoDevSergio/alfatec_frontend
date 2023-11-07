@@ -113,7 +113,7 @@ export const ProfesionalModify = () => {
             <option value="médico">Modificar a médico</option>
             <option value="enfermero">Modificar a enfermero</option>
             </select>)}
-        {reduxProfesionalData?.profesionalData?.tipoProfesional !== ("administrativo"||"médico"||"enfermero") && (
+        {reduxProfesionalData?.profesionalData?.tipoProfesional !== ("médico"||"enfermero"||"administrativo") && (
           <select
           className="tipoProfesionalDropdown"
           onChange={dropdownHandler}

@@ -24,6 +24,10 @@ export const deletePaciente = async (pacienteId) => {
   return await axios.delete(`http://localhost:5000/pacientes/${pacienteId}`);
 };
 
+export const modifyPaciente = async (pacienteBody) => {
+  return axios.put(`http://localhost:5000/pacientes`, pacienteBody);
+};
+
 //PROFESIONALES
 
 export const searchProfesionales = async () => {

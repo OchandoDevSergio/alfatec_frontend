@@ -12,15 +12,6 @@ export const PacienteCard = ({
     nhc,
     nombre,
     primerApellido,
-    // segundoApellido,
-    // genero,
-    // fechaNacimiento,
-    // nifPasaporte,
-    // calle,
-    // numero,
-    // puerta,
-    // codigoPostal,
-    // ciudad,
     paciente,
     update,
 }) => {
@@ -30,6 +21,10 @@ export const PacienteCard = ({
   const showPaciente = () => {
     dispatch(loadPacienteData({ pacienteData: paciente }))
     navigate("/mostrarpaciente")
+  };
+  const modifyPaciente = () => {
+    dispatch(loadPacienteData({ pacienteData: paciente }))
+    navigate("/modificarpaciente")
   };
   const [showModal, setShowModal] = useState(false);
 
@@ -65,7 +60,7 @@ export const PacienteCard = ({
             <div className="buttonClicker" onClick={() => showPaciente(paciente)}>
             Examinar
             </div>
-            <div className="buttonClicker" onClick={() => navigate("/profesionales")}>
+            <div className="buttonClicker" onClick={() => modifyPaciente(paciente)}>
             Modificar
             </div>
             <div className="buttonClicker" onClick={() => setShowModal(true)}>

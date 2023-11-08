@@ -23,7 +23,7 @@
 
 ### Descripción general del proyecto
 
-Propuesto el proyecto de desarrollar una aplicación web para la gestión de un centro médico, el presente repositorio supone la sección frontend del mismo. En esta sección ha de poder: accederse a la información de profesionales, pacientes y sus pólizas de seguro; modificar esta información; añadir nuevas entradas con futuros profesionales, pacientes y pólizas así como eliminarlas y por último disponer de una funcionalidad especial capaz de discriminar para eliminar de entre los profesionales a aquellos que sean médicos.
+Propuesto el proyecto de desarrollar una aplicación web para la gestión de un centro médico, el presente repositorio supone la sección frontend del mismo. En esta sección ha de poder: accederse a la información de profesionales, pacientes y sus pólizas de seguro, a través de un sistema que agrupe esta iformación por pestañas; modificar esta información; añadir nuevas entradas con futuros profesionales, pacientes y pólizas así como eliminarlas y por último disponer de una funcionalidad especial capaz de discriminar para eliminar de entre los profesionales a aquellos que sean médicos.
 
 ### Vistas
 

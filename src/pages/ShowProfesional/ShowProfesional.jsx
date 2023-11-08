@@ -1,17 +1,26 @@
 import "./ShowProfesional.css";
 import { profesionalDataCheck } from "../profesionalSlice";
 import { useSelector } from "react-redux";
-
-
+import { useState } from "react";
 
 export const ShowProfesional = () => {
 
   const reduxProfesionalData = useSelector(profesionalDataCheck);
+  const [pestañas, setPestañas] = useState("personales");
 
     return (
       <div className="showProfesional">
+        <div className="pestañasDiv">
+        <div className="pestaña" onClick={() => setPestañas("personales")}>
+        Datos personales
+        </div>
+        <div className="pestaña" onClick={() => setPestañas("dirección")}>
+        Dirección
+        </div>
+        </div>
+        {pestañas === "personales" && (
         <div className="profesionalShowCard">
-          <div className="bold">PROFESIONAL</div>
+          <div className="bold">DATOS PERSONALES PROFESIONAL</div>
           <div>
           <span className="bold">Id:</span> {reduxProfesionalData.profesionalData.id}{" "}
           <span className="bold">Tipo de profesional:</span> {reduxProfesionalData.profesionalData.tipoProfesional}
@@ -26,7 +35,11 @@ export const ShowProfesional = () => {
           <span className="bold">Fecha de nacimiento:</span> {reduxProfesionalData.profesionalData.fechaNacimiento}{" "}
           <span className="bold">NIF/Pasaporte:</span> {reduxProfesionalData.profesionalData.nifPasaporte}
           </div>
-          <div className="bold">Dirección:</div>
+        </div>
+        )}
+        {pestañas === "dirección" && (
+        <div className="profesionalShowCard">
+          <div className="bold">DIRECCION PROFESIONAL</div>
           <div>
           <span className="bold">Ciudad:</span> {reduxProfesionalData.profesionalData.ciudad}{" "}
           <span className="bold">Calle:</span> {reduxProfesionalData.profesionalData.calle}
@@ -37,9 +50,8 @@ export const ShowProfesional = () => {
           <span className="bold">C.P:</span> {reduxProfesionalData.profesionalData.codigoPostal}   
           </div> 
         </div>
+        )}
+
       </div>
     );
-
-
-
 };

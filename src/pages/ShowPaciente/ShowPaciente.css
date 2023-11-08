@@ -1,9 +1,9 @@
 .showPaciente {
-    /* height: 35em; */
+    height: 35em;
     background-color: aqua;
     display:flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
 }
 
@@ -11,8 +11,8 @@
     margin: 1em;
     padding: 0;
 
-    height: 35vh;
-    width: 35vw;
+    height: 10em;
+    width: 33em;
 
     background-color:beige;
     color:black;
@@ -50,6 +50,32 @@
     display:flex;
     flex-direction: column;
     align-items:center;
-    justify-content: space-evenly;
-    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
+    flex-wrap: wrap;
+}
+
+.pestañasDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.pestaña {
+    margin: 1em;
+
+    color: black;
+    font-weight: bold;
+
+    font-size: large;
+    font-family: Cambria ;
+
+    transition: 0.2s;
+    cursor: pointer;
+
+    display:flex;
+    justify-content: center;
+}
+
+.pestaña:hover {
+    transition: 0.2s;
+    color: darkcyan;
 }

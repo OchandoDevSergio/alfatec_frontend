@@ -67,7 +67,7 @@ export const Profesionales = () => {
           <Modal.Title>Atención</Modal.Title>
           </Modal.Header>
           <Modal.Body className="modalConfirm-design-body">
-          <div>Está seguro de que desea eliminar a todos los médicos de la base de datos?</div>
+          <div>¿Está seguro de que desea eliminar a todos los médicos de la base de datos?</div>
           </Modal.Body>
           <Modal.Footer className="modalConfirm-design-footer">
           <div onClick={() => medicsDelete()} className="modalButton">

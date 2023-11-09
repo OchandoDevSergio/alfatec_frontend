@@ -60,6 +60,10 @@ export const deletePoliza = async (polizaId) => {
   return await axios.delete(`http://localhost:5000/polizas/${polizaId}`);
 };
 
+export const deletePolizasPaciente = async (pacienteId) => {
+  return axios.delete(`http://localhost:5000/polizas/${pacienteId}`);
+};
+
 export const registerPoliza = async (polizaBody) => {
   return axios.post(`http://localhost:5000/polizas`, polizaBody);
 };

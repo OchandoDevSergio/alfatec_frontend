@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { loadPacienteData } from "../../pages/pacienteSlice";
 import { pacienteDataCheck } from "../../pages/pacienteSlice";
 import { deletePaciente } from "../../services/apiCalls";
+import { deletePolizasPaciente } from "../../services/apiCalls";
 import Modal from "react-bootstrap/Modal";
 
 export const PacienteCard = ({
@@ -34,11 +35,14 @@ export const PacienteCard = ({
 
   const pacienteDelete = (pacienteId) => {
     console.log("soy pacienteId", pacienteId.id)
-    deletePaciente (pacienteId.id)
-    .then (()=>{
-      update()
-      })
+    deletePolizasPaciente(pacienteId.id)
+    .then(()=>{
+      deletePaciente (pacienteId.id)
+      .then (()=>{
+        update()
+        })
       .catch((error) => console.log(error));
+    })
     setShowModal(false);
 
   };

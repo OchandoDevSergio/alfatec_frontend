@@ -57,7 +57,7 @@ export const searchPolizas = async (pacienteID) => {
 };
 
 export const deletePoliza = async (polizaId) => {
-  return await axios.delete(`http://localhost:5000/polizas/${polizaId}`);
+  return await axios.delete(`http://localhost:5000/polizas/poliza/${polizaId}`);
 };
 
 export const deletePolizasPaciente = async (pacienteId) => {

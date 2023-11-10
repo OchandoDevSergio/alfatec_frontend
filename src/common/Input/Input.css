@@ -1,5 +1,5 @@
 .defaultInput {
-    width: 20vw;
+    width: 20em;
     border-radius: 10em;
-    border: solid darkcyan;
+    border: solid darkcyan; 
 }

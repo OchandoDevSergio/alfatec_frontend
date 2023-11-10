@@ -9,6 +9,8 @@ export const ShowProfesional = () => {
   const [pestañas, setPestañas] = useState("personales");
 
     return (
+      <>
+      <div className="subHeader"></div>
       <div className="showProfesional">
         <div className="pestañasDiv">
         <div className="pestaña" onClick={() => setPestañas("personales")}>
@@ -53,5 +55,6 @@ export const ShowProfesional = () => {
         )}
 
       </div>
+      </>
     );
 };

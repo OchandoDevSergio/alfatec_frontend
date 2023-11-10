@@ -40,6 +40,8 @@ export const PacienteAdd = () => {
   };
 
   return (
+    <>
+    <div className="subHeader"></div>
     <div className="container-fluid pacienteAdd">
       <div className="space"></div>
       <div className="row upRowRegister">
@@ -82,7 +84,7 @@ export const PacienteAdd = () => {
             <div className="scripting">Segundo apellido</div>
             <Input
               type={"text"}
-              placeholder="Introduce el primer apellido"
+              placeholder="Introduce el segundo apellido"
               value={pacienteBody.segundoApellido}
               name={"segundoApellido"}
               className="defaultInput"
@@ -190,5 +192,6 @@ export const PacienteAdd = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

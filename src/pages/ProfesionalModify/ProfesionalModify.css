@@ -1,6 +1,10 @@
-.pacienteModify {
-    background-color: aqua;
-    height: 38em;
+.profesionalModify {
+    /* background-color: aqua; */
+    background-image:url(https://iili.io/JBhyz6g.md.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    height: 40em;
 }
 
 .inputsCol {
@@ -15,11 +19,19 @@
     justify-content: center;
 }
 
-.register {
+.upRowRegister {
+    height: 30em;
+
+}
+
+.modify {
     margin: 1em;
-    width: 14em;
+    width: 18em;
 
     color: black;
+    background-color: white;
+    border-radius: 10em;
+    border: solid darkcyan;
     font-weight: bold;
 
     font-size: large;
@@ -31,8 +43,13 @@
 
 }
 
-.register:hover {
+.modify:hover {
     transition: 0.2s;
     color:darkcyan;
     cursor: pointer;
+}
+
+.scripting {
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }

@@ -33,12 +33,14 @@ export const Pacientes = () => {
   }, [pacientes]);
 
   return (
-    <div className="pacientes">
-      <div className="subHeader">
+    <>
+    <div className="subHeader">
         <div className="buttonClicker" onClick={() => navigate("/pacienteadd")}>
         AÑADIR PACIENTE
         </div>
       </div>
+    <div className="pacientes">
+      
       {pacientes.length > 0 ? (
         <div className="infinite-scroll-container">
 
@@ -78,5 +80,6 @@ export const Pacientes = () => {
         </div>
       )}
       </div>
+      </>
   );
 };

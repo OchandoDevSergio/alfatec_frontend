@@ -1,9 +1,9 @@
 .footer {
-    height: 5vh;
-    width: 100vw;
+    height: 1.675em;
+    width: 100em;
 
-    background-color:white;
-    color:darkcyan;
+    background-color:grey;
+    color:white;
 
     display:flex;
     align-items: center;

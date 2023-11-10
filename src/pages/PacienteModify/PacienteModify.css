@@ -1,6 +1,10 @@
 .pacienteModify {
-    background-color: aqua;
-    height: 38em;
+    /* background-color: blue; */
+    background-image:url(https://iili.io/JBhprQt.md.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    height: 40em;
 }
 
 .inputsCol {
@@ -28,11 +32,15 @@
     transition: 0.2s;
     cursor: pointer;
 
-
 }
 
 .register:hover {
     transition: 0.2s;
     color:darkcyan;
     cursor: pointer;
+}
+
+.scripting {
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }

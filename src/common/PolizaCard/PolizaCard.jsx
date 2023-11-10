@@ -68,11 +68,11 @@ export const PolizaCard = ({
           <div>Está seguro de que desea eliminar la póliza de la base de datos?</div>
           </Modal.Body>
           <Modal.Footer className="modalConfirm-design-footer">
-            <div onClick={() => polizaDelete({id})} className="modalButton">
+            <div onClick={() => polizaDelete({id})} className="buttonClicker">
             Eliminar póliza
             </div>
             <div className="spacer"></div>
-            <div onClick={() => setShowModal(false)} className="modalButton">
+            <div onClick={() => setShowModal(false)} className="buttonClicker">
             Regresar
             </div>
             </Modal.Footer>

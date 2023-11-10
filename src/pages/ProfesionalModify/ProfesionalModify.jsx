@@ -69,10 +69,11 @@ export const ProfesionalModify = () => {
   };
 
   return (
-    <div className="container-fluid profesionalAdd">
+    <>
+    <div className="subHeader"></div>
+    <div className="container-fluid profesionalModify">
       <div className="space"></div>
       <div className="row upRowRegister">
-      <div className="row inputRow">
         <div className="col-2"></div>
         <div className="col-10">
       <div className="row inputRow">
@@ -127,7 +128,6 @@ export const ProfesionalModify = () => {
           <option value="enfermero">enfermero</option>
           <option value="administrativo">administrativo</option>
           </select>)}
-        </div>
         </div>
         </div>
       <div className="col-2"></div>
@@ -272,10 +272,11 @@ export const ProfesionalModify = () => {
         <div className="col-1"></div>
       </div>
       <div className="row downRowRegister">
-        <div className="register" onClick={() => profesionalModify()}>
+        <div className="modify" onClick={() => profesionalModify()}>
           Modificar el profesional
         </div>
       </div>
     </div>
+    </>
   );
 };

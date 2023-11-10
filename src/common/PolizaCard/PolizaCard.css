@@ -4,7 +4,11 @@
 
     height: 11em;
     width: 27em;
-    background-color:beige;
+    /* background-color:beige; */
+    background-image:url(https://iili.io/JBheyuV.md.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
     color:black;
 
     display: flex;

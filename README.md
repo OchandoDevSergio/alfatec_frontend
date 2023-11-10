@@ -68,4 +68,4 @@ https://tutorialmarkdown.com/emojis
 
 https://badges.pages.dev/
 
-https://imgbb.com/
+https://freeimage.host/

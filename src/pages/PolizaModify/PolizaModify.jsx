@@ -53,7 +53,9 @@ export const PolizaModify = () => {
   };
 
   return (
-    <div className="container-fluid profesionalAdd">
+    <>
+    <div className="subHeader"></div>
+    <div className="container-fluid polizaModify">
       <div className="space"></div>
       <div className="row upRowRegister">
       <div className="col-3"></div>
@@ -107,7 +109,7 @@ export const PolizaModify = () => {
             <option value="salud">Modificar a salud</option>
             <option value="familiar">Modificar a familiar</option>
             </select>)}
-        {reduxPolizaData?.polizaData?.tipoSeguro !== ("salud"&&"familiar"&&"dental") && (
+        {(reduxPolizaData?.polizaData?.tipoSeguro !== "salud")&&(reduxPolizaData?.polizaData?.tipoSeguro !=="familiar")&&(reduxPolizaData?.polizaData?.tipoSeguro !=="dental") && (
           <select
           className="tipoSeguroDropdown"
           onChange={dropdownHandler}
@@ -142,5 +144,6 @@ export const PolizaModify = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

@@ -60,6 +60,8 @@ export const PacienteModify = () => {
   };
 
   return (
+    <>
+    <div className="subHeader"></div>
     <div className="container-fluid pacienteModify">
       <div className="space"></div>
       <div className="row upRowRegister">
@@ -210,5 +212,6 @@ export const PacienteModify = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

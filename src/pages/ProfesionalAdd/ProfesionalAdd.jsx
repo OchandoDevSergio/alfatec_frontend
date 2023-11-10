@@ -49,10 +49,11 @@ export const ProfesionalAdd = () => {
   };
 
   return (
+    <>
+    <div className="subHeader"></div>
     <div className="container-fluid profesionalAdd">
       <div className="space"></div>
       <div className="row upRowRegister">
-      <div className="row inputRow">
         <div className="col-2"></div>
         <div className="col-10">
       <div className="row inputRow">
@@ -70,7 +71,6 @@ export const ProfesionalAdd = () => {
             <option value="enfermero">enfermero</option>
             <option value="administrativo">administrativo</option>
             </select>
-        </div>
         </div>
         </div>
       <div className="col-2"></div>
@@ -220,5 +220,6 @@ export const ProfesionalAdd = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

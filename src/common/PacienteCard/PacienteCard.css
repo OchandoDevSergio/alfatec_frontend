@@ -5,7 +5,11 @@
     height: 10em;
     width: 25em;
 
-    background-color:beige;
+    /* background-color:beige; */
+    background-image:url(https://iili.io/JBheyuV.md.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
     color:black;
 
     display: flex;
@@ -22,7 +26,7 @@
 
 .buttonClicker:hover {
     transition: 0.2s;
-    color:black;
+    color: darkcyan;
     cursor: pointer;
 }
 
@@ -31,8 +35,8 @@
 }
 
 .modal-design-body {
-    height: 20vh;
-    width: 56.5vw;
+    height: 20em;
+    width: 56.5em;
     background-color: black;
     display:flex;
     flex-direction: column;

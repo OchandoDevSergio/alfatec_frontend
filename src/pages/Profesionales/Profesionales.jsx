@@ -48,8 +48,8 @@ export const Profesionales = () => {
   }, [profesionales]);
 
   return (
-    <div className="profesionales">
-      <div className="subHeader">
+    <>
+          <div className="subHeader">
         <div className="buttonClicker" onClick={() => setShow(true)}>
         BORRAR MÉDICOS
         </div>
@@ -70,16 +70,18 @@ export const Profesionales = () => {
           <div>¿Está seguro de que desea eliminar a todos los médicos de la base de datos?</div>
           </Modal.Body>
           <Modal.Footer className="modalConfirm-design-footer">
-          <div onClick={() => medicsDelete()} className="modalButton">
+          <div onClick={() => medicsDelete()} className="buttonClicker">
             Eliminar médicos
           </div>
           <div className="spacer"></div>
-          <div onClick={() => setShow(false)} className="modalButton">
+          <div onClick={() => setShow(false)} className="buttonClicker">
             Regresar
           </div>
           </Modal.Footer>
         </Modal>
       </div>
+    <div className="profesionales">
+
       {profesionales.length > 0 ? (
         <div className="infinite-scroll-container">
 
@@ -120,5 +122,6 @@ export const Profesionales = () => {
         </div>
       )}
       </div>
+      </>
   );
 };

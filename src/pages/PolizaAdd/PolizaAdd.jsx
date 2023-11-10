@@ -48,7 +48,9 @@ export const PolizaAdd = () => {
   };
 
   return (
-    <div className="container-fluid profesionalAdd">
+    <>
+    <div className="subHeader"></div>
+    <div className="container-fluid polizaAdd">
       <div className="space"></div>
       <div className="row upRowRegister">
       <div className="col-3"></div>
@@ -100,5 +102,6 @@ export const PolizaAdd = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

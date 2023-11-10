@@ -1,12 +1,17 @@
 .pacientes {
-    background-color: aqua;
-    height: 38em;
+    height: 40em;
+    /* background-color: rgb(234,234,236); */
+    
+    background-image:url(https://iili.io/JBhprQt.md.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
 }
 
 .subHeader{
-    height: 5vh;
-    width: 100vw;
-    background-color: white;
+    height: 1.5em;
+    width: 100em;
+    background-color: darkgrey;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -15,7 +20,7 @@
 
 .infinite-scroll-container {
     width: 100vw;
-    background-color: aqua;
+    /* background-color: aqua; */
     overflow: auto;
     display:flex;
     align-items:center;

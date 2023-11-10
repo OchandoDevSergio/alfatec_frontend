@@ -10,7 +10,7 @@
 
 .subHeader{
     height: 1.5em;
-    width: 100em;
+    /* width: 100em; */
     background-color: darkgrey;
     display:flex;
     flex-direction: row;

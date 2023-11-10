@@ -41,10 +41,12 @@ export const ProfesionalAdd = () => {
 
 
   const profesionalRegister = () => {
+    if ((profesionalBody.nºColegiado!== "")&&(profesionalBody.nombre!== "")&&(profesionalBody.primerApellido!== "")){
       registerProfesional(profesionalBody)
         .then((resultado) => {
         })
         .catch((error) => console.log(error));
+    }
   };
 
   return (

@@ -11,7 +11,7 @@ export const PacienteAdd = () => {
     nhc:  "",
     nombre:  "",
     primerApellido:  "",
-    segundoApellido:  "",
+    segundoApellido:  " ",
     genero:  "",
     fechaNacimiento:  "",
     nifPasaporte:  "",
@@ -32,10 +32,13 @@ export const PacienteAdd = () => {
   };
 
   const pacienteRegister = () => {
+    if((pacienteBody.nhc!=="")&&(pacienteBody.nombre!=="")&&(pacienteBody.primerApellido!=="") ) {
       registerPaciente(pacienteBody)
-        .then((resultado) => {
-        })
-        .catch((error) => console.log(error));
+      .then((resultado) => {
+      })
+      .catch((error) => console.log(error));
+    }
+
   };
 
   return (

@@ -61,6 +61,9 @@ Por otra parte en el encabezado encontramos en todo momento tanto un botón "pac
 
 ### Errores conocidos
 
+-Es preciso rellenar todos los campos para registrar pacientes, usuarios o pólizas.
+
+-Las vistas para registrar pacientes, usuarios o pólizas no son responsive.
 
 ### Recursos alternativos y fuentes
 

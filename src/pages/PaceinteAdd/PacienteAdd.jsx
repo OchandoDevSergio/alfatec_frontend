@@ -32,7 +32,6 @@ export const PacienteAdd = () => {
   };
 
   const pacienteRegister = () => {
-    console.log("entra")
       registerPaciente(pacienteBody)
         .then((resultado) => {
         })

@@ -10,7 +10,7 @@ import { modifyPaciente } from "../../services/apiCalls";
 export const PacienteModify = () => {
   //const navigate = useNavigate();
   const reduxPacienteData = useSelector(pacienteDataCheck);
-  console.log("soy reduxPacienteData", reduxPacienteData)
+
   const [pacienteBody, setPacienteBody] = useState({
     id: reduxPacienteData?.pacienteData?.id,
     nhc:  reduxPacienteData?.pacienteData?.nhc,
@@ -52,7 +52,6 @@ export const PacienteModify = () => {
   };
 
   const pacienteModify = () => {
-    console.log("entra")
       modifyPaciente(pacienteBody)
         .then((resultado) => {
         })

@@ -10,8 +10,6 @@ export const PolizaModify = () => {
   //const navigate = useNavigate();
   const reduxPolizaData = useSelector(polizaDataCheck);
 
-  console.log("soy reduxPolizaData", reduxPolizaData)
-
   const [polizaBody, setPolizaBody] = useState({
     id: reduxPolizaData?.polizaData?.id,
     paciente_id:  reduxPolizaData?.polizaData?.paciente_id,
@@ -45,7 +43,6 @@ export const PolizaModify = () => {
   };
 
   const polizaModify = () => {
-    console.log("entra")
       modifyPoliza(polizaBody)
         .then((resultado) => {
         })

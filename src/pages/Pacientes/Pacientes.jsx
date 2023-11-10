@@ -13,7 +13,6 @@ export const Pacientes = () => {
   useEffect(() => {
     searchPacientes()
       .then((results) => {
-        console.log("soy results",results)
         setPacientes(results.data.data);
       })
       .catch((error) => console.log(error));
@@ -22,15 +21,10 @@ export const Pacientes = () => {
   const updateMe = () => {
     searchPacientes()
       .then((results) => {
-        console.log("soy results",results)
         setPacientes(results.data.data);
       })
       .catch((error) => console.log(error));
   };
-
-  useEffect(() => {
-    console.log("soy pacientes", pacientes)
-  }, [pacientes]);
 
   return (
     <>

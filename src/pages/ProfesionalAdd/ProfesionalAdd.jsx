@@ -41,7 +41,6 @@ export const ProfesionalAdd = () => {
 
 
   const profesionalRegister = () => {
-    console.log("entra")
       registerProfesional(profesionalBody)
         .then((resultado) => {
         })

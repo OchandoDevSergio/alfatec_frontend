@@ -16,7 +16,6 @@ export const Profesionales = () => {
     .then (()=>{
       searchProfesionales()
       .then((results) => {
-        console.log("soy results tras deleteMedics",results)
         setProfesionales(results.data.data);
       })
       .catch((error) => console.log(error));
@@ -28,7 +27,6 @@ export const Profesionales = () => {
   useEffect(() => {
     searchProfesionales()
       .then((results) => {
-        console.log("soy results",results)
         setProfesionales(results.data.data);
       })
       .catch((error) => console.log(error));
@@ -37,15 +35,10 @@ export const Profesionales = () => {
   const updateMe = () => {
     searchProfesionales()
       .then((results) => {
-        console.log("soy results",results)
         setProfesionales(results.data.data);
       })
       .catch((error) => console.log(error));
   };
-
-  useEffect(() => {
-    console.log("soy profesionales", profesionales)
-  }, [profesionales]);
 
   return (
     <>

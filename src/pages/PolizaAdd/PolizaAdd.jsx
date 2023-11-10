@@ -10,18 +10,12 @@ export const PolizaAdd = () => {
   //const navigate = useNavigate();
   const reduxPacienteData = useSelector(pacienteDataCheck);
 
-  //console.log("soy reduxPacienteData", reduxPacienteData)
-
   const [polizaBody, setPolizaBody] = useState({
     paciente_id:  reduxPacienteData.pacienteData.id,
     nombreAseguradora:  "",
     tipoSeguro:  "",
     nºTarjeta:  "",
   });
-
-  useEffect(() => {
-    console.log("soy polizaBody", polizaBody)
-  }, [polizaBody]);
 
   //BIND
   const inputHandler = (e) => {
@@ -40,7 +34,6 @@ export const PolizaAdd = () => {
   };
 
   const polizaRegister = () => {
-    console.log("entra")
       registerPoliza(polizaBody)
         .then((resultado) => {
         })

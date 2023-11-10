@@ -27,12 +27,7 @@ export const ProfesionalCard = ({
 
   const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    console.log("soy profesionalDataCheck", reduxProfesionalData.profesionalData)
-  }, [reduxProfesionalData]);
-
   const profesionalDelete = (profesionalId) => {
-    console.log("soy profesionalId", profesionalId.id)
     deleteProfesional (profesionalId.id)
     .then (()=>{
        update()

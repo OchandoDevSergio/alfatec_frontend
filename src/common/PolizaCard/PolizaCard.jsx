@@ -19,7 +19,6 @@ export const PolizaCard = ({
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const polizaDelete = (polizaId) => {
-    console.log("soy profesionalId", polizaId.id)
     deletePoliza (polizaId.id)
     .then (()=>{
       update();

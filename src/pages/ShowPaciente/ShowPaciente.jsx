@@ -28,11 +28,6 @@ export const ShowPaciente = () => {
       .catch((error) => console.log(error));
   };
 
-  // useEffect(() => {
-  //   console.log("soy pestañas", pestañas)
-  // }, [pestañas]);
-
-
     return (
     <>      
       <div className="subHeader">

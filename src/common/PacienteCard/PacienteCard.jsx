@@ -29,12 +29,7 @@ export const PacienteCard = ({
   };
   const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    console.log("soy pacienteDataCheck", reduxPacienteData.pacienteData)
-  }, [reduxPacienteData]);
-
   const pacienteDelete = (pacienteId) => {
-    console.log("soy pacienteId", pacienteId.id)
     deletePolizasPaciente(pacienteId.id)
     .then(()=>{
       deletePaciente (pacienteId.id)

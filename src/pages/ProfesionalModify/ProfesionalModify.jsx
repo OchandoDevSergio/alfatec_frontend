@@ -10,7 +10,7 @@ import { modifyProfesional } from "../../services/apiCalls";
 export const ProfesionalModify = () => {
   //const navigate = useNavigate();
   const reduxProfesionalData = useSelector(profesionalDataCheck);
-  console.log("soy reduxProfesionalData", reduxProfesionalData)
+
   const [profesionalBody, setProfesionalBody] = useState({
     id: reduxProfesionalData?.profesionalData?.id,
     nºColegiado:  reduxProfesionalData?.profesionalData?.nºColegiado,
@@ -60,8 +60,6 @@ export const ProfesionalModify = () => {
   };
 
   const profesionalModify = () => {
-    console.log("entra")
-      console.log("soy profesionalbody", profesionalBody)
       modifyProfesional(profesionalBody)
         .then((resultado) => {
         })

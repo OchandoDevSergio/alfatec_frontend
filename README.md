@@ -35,29 +35,29 @@ Esta aplicación se ha desarrollado con una interfaz de programación *API RESTf
 
 Al entrar en la aplicación nos encontramos con la vista **Pacientes**, en la que, tras hacer una llamada al backend para traernos la información de todos los pacientes registrados, se nos muestra un *infinitescroll* con tarjetas en las que se reflejan sus datos más básicos para identificarlos. Además en estas mismas tarjetas encontramos 3 botones: un boton "examinar" que almacenaría en *redux* la información del paciente concreto de la tarjeta y navegaría a la vista  **Mostrar paciente**; un botón modificar que también almacenaría en redux tal información pero navegaría a la vista **Modificar paciente**; por último un botón "eliminar" que abriría un modal en el que son pediría confirmación para eliminar al paciente de la base de datos. Por último en esta vista contaríamos con un botón "añadir paciente" en el subencabezado que nos conduciría a la vista **Pacienteadd**.
 
-![pacientes](https://i.ibb.co/3khs4Zm/pacientes.jpg)
+![pacientes](https://iili.io/JBwrxov.md.jpg)
 
 La vista paciente add simplemente constaría de una serie de inputs en los que se solicitarían los datos para generar un paciente nuevo y un botón para llevarlo a cabo.
 
 La vista modificar paciente importaría de redux los datos del paciente para mostrarlos como valor por defecto en unos inputs, que tras modificar y pulsar el botón "modificar el paciente", se enviarían al backend con el *Id* del paciente para modificarlo.
 
-![modificar paciente](https://i.ibb.co/9cKkTNt/modificarpaciente.jpg)
+![modificar paciente](https://iili.io/JBwghZv.md.jpg)
 
 La vista Mostrar paciente funcionaría importando de redux la información del paciente allí almacenado a través de la vista pacientes y llamando al backend para traer las pólizas asociadas al mismo. Una vez disponiendo de los datos, a través de un *hook* del tipo *useState* que gestionaría la selección entre tres pestañas diferentes: "datos personales" que mostraría los datos personales del paciente seleccionado; "dirección" que mostraría los datos relativos a la dirección del paciente seleccionado y por último "pólizas" que mostraría un infinite scroll con las polizas del paciente seleccionado. Además en el subencabezado contaría con un botón "añadir póliza al paciente" con el que navegar a la vista **Poliza add**, donde mediante inputs y un *dropdown* se nos pediría los datos para añadir una nueva póliza vinculada al paciente que importamos de redux.
 
-![mostrar paciente](https://i.ibb.co/KGs9vcK/mostrarpaciente.jpg)
+![mostrar paciente](https://iili.io/JBwggus.md.jpg)
 
-![polizas](https://i.ibb.co/QMT1vwC/polizas.jpg)
+![polizas](https://iili.io/JBwrwOu.md.jpg)
 
-![poliza add](https://i.ibb.co/PNPMNFd/polizaadd.jpg)
+![poliza add](https://iili.io/JBwrEil.md.jpg)
 
 Por otra parte en el encabezado encontramos en todo momento tanto un botón "pacientes" que nos reconduciría a la respectiva vista, como un botón "profesionales" que nos serviría para navegar a la vista **Profesionales**. Esta vista funcionaría de un modo similar a la vista pacientes, pero mostrando los profesionales en este caso. Pero además de contar con el botón "añadir profesional", que nos conduciría a la vista **Profesional add** equivalente a paciente add pero generando profesionales (con un dropdown para escoger el tipo de profesional), también encontramos un botón "borrar médicos" que abriría un modal en el que se nos pediría confirmación para eliminar todos los profesionales del tipo "médico". Cabiendo matizar que en la vista **Mostrar profesionales** no existiría la pestaña pólizas, por estar éstas asociadas únicamente a pacientes.
 
-![profesionales](https://i.ibb.co/Kr6GcbK/profesionales.jpg)
+![profesionales](https://iili.io/JBwrQWv.md.jpg)
 
-![profesional add](https://i.ibb.co/k9pS3nP/profesionaladd.jpg)
+![profesional add](https://iili.io/JBwrSfV.md.jpg)
 
-![mostrar profesional](https://i.ibb.co/9hgwkCj/mostrarprofesional.jpg)
+![mostrar profesional](https://iili.io/JBwgytj.md.jpg)
 
 ### Errores conocidos
 

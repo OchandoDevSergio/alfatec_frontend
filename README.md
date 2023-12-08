@@ -11,6 +11,8 @@
 
 - [Descripción general del proyecto :speech_balloon:](#descripción-general-del-proyecto)
 
+- [Modo de empleo :on:](#modo-de-empleo)
+
 - [Diseño :computer:](#diseño) 
 
 - [Vistas y Funcionamiento :arrow_forward:](#vistas-y-funcionamiento)
@@ -24,6 +26,46 @@
 ### Descripción general del proyecto
 
 Propuesto el proyecto de desarrollar una aplicación web para la gestión de un centro médico, el presente repositorio supone la sección frontend del mismo. En esta sección ha de poder: accederse a la información de profesionales, pacientes y sus pólizas de seguro, a través de un sistema que agrupe esta iformación por pestañas; modificar esta información; añadir nuevas entradas con futuros profesionales, pacientes y pólizas así como eliminarlas y por último disponer de una funcionalidad especial capaz de discriminar para eliminar de entre los profesionales a aquellos que sean médicos.
+
+### Modo de empleo
+
+Pasos para lanzar la aplicación:
+
+1- Generar una base de datos SQL con el nombre "alfatec_backend" con la ayuda de algún administrador de bases de datos tipo MySQL Workbench. Importante tener en cuenta que los datos en el archivo config.json de la API (los datos con los que por defecto va a tratar de enlazar con esa base de datos) son:
+
+  "development": {
+    "username": "root",
+    "password": "1234",
+    "database": "alfatec_backend",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+
+Estos datos se habrían de cambiar por los que correspondan en su administrador de bases de datos antes de proseguir con los siguientes pasos.
+
+2- Abre el repositorio de la API con el editor de código y ejecuta los siguientes comandos por la terminal:
+
+npm install --save-dev sequelize-cli
+En caso de no tenerlo ya instalado.
+
+sequelize-cli db:migrate
+
+sequelize-cli db:seed:all
+
+Adjunto link con la documentación relativa a este paso :
+https://sequelize.org/docs/v6/other-topics/migrations/
+
+3- Se ejecuta el siguiente comando para levantar el servidor de la API:
+
+npm start
+
+4- Se abre el repositorio del cliente con el editor de código y se ejecuta el siguiente comando en el terminal:
+
+npm run dev
+
+5- Se accede a través del buscador a la URL:
+
+http://localhost:5173/
 
 ### Diseño
 
